@@ -1,0 +1,121 @@
+\documentclass{article}
+
+\usepackage{cite}
+\usepackage{pgfgantt}
+\usepackage{pdflscape}
+\usepackage{geometry}
+\usepackage{cleveref}
+
+\newcounter{myWeekNum}
+\stepcounter{myWeekNum}
+
+\newcommand{\myWeek}{\themyWeekNum
+    \stepcounter{myWeekNum}
+    \ifnum\themyWeekNum=53
+    \setcounter{myWeekNum}{1}
+    \else\fi
+}
+
+\begin{document}
+
+\setcounter{myWeekNum}{39}
+\title{Research Proposal: Development of an automated microfluidic system for spheroid-on-chip impedance monitoring.}
+\author{David Freismuth}
+
+\maketitle
+
+\abstract{A microfluidic setup comprising existing commercial microfluidic pumps, impedance analyzers, and customized chips will be realized for automated, continuous, real-time impedance based monitoring of cancer spheroids. This setup will reveal insights to in-vitro growth and proliferation of 3D cancer models. It will also allow to study the influence of conventional and novel anti-cancer drugs.
+}
+ 
+\section{Introduction}
+A micro fluidics system shall be developed, that allows automated impedance measurement of organoids, that are placed within the system. It shall also be possible to detect exosomes, which are emitted by the organoid.
+
+\section{State of the Art}
+TODO
+\section{Research Design}
+TODO
+\section{Time Plan}
+
+The major project tasks can be seen in the following list. A corresponding gantt chart is displayed in \Cref{fig:projectTimePlan1} and \Cref{fig:projectTimePlan2}. 
+\begin{enumerate}
+\item \textbf{Micro Pump Control:} A control for an micro fluidics pump shall be designed, implemented, tested and documented.
+    \begin{enumerate}
+        \item \textbf{Research:} Research regarding micro fluidics pump shall be done. 
+        \item \textbf{Design:} The software design of the pump control shall be done.
+        \item \textbf{Development:} The software for the pump control shall be written.
+        \item \textbf{Testing:} The pump control shall be tested.
+        \item \textbf{Milestone 1:} The pump control has been successfully tested and its documentation is finished.
+    \end{enumerate}
+\item \textbf{Impedance Measurement:} A micro fluidics device shall be created, which allows the impedance measurement of organoids.
+    \begin{enumerate}
+        \item \textbf{Research:} Research regarding organoid impedance measurement shall be done. 
+        \item \textbf{Electrode Design:} The electrode for the impedance measurement shall be designed.
+        \item \textbf{Design of Measurement:} The impedance measurement principle shall be designed, modelled and simulated.
+        \item \textbf{Fabrication:} The micro fluidics device shall be fabricated.
+        \item \textbf{Test Run:} The impedance measurement shall be tested.
+        \item \textbf{Test Evaluation:} The test results of the impedance measurement shall be evaluated.
+        \item \textbf{Milestone 2:} The impedance measurement has successfully been applied to an organoid.
+    \end{enumerate}
+\item \textbf{Exosome Detection:} The previously implemented impedance measurement shall be extended to also detect exosomes.
+    \begin{enumerate}
+        \item \textbf{Research:} Research regarding exosomes shall be done.
+    \end{enumerate}
+\item \textbf{Documentation:} The diploma thesis shall be written.
+    \begin{enumerate}
+        \item \textbf{Milestone 4:} Diploma thesis has been written and submitted. End of project.
+    \end{enumerate}
+\end{enumerate}
+ 
+ \newgeometry{left=15mm,bottom=20mm}
+ \begin{landscape}
+   \ganttset{calendar week text={W\myWeek{}}}
+   \begin{figure}
+ \begin{ganttchart}[hgrid, x unit=1.3mm, y unit chart=7.5mm, time slot format=little-endian
+]{01.10.2022}{28.2.2023}
+    \gantttitlecalendar{year, month = name, week = 40} \\
+    \ganttgroup{Micro Pump Control}{01.10.2022}{31.10.2022} \\
+        \ganttbar{Research}{01.10.2022}{07.10.2022} \\
+        \ganttlinkedbar{Design}{07.10.2022}{14.10.2022} \\
+        \ganttlinkedbar{Development}{14.10.2022}{21.10.2022} \\
+        \ganttlinkedbar{Testing}{21.10.2022}{28.10.2022} \\
+        \ganttlinkedmilestone{Milestone 1}{28.10.2022} \\
+    \ganttgroup{Impedance Measurement}{31.10.2022}{31.12.2022} \\
+        \ganttbar{Research}{31.10.2022}{7.11.2022} \\
+        \ganttbar{Electrode Design}{7.11.2022}{21.11.2022} \ganttlink{elem7}{elem8}\\
+        \ganttbar{Design of Measurement}{7.11.2022}{21.11.2022} \ganttlink{elem7}{elem9}\\
+        \ganttlinkedbar{Fabrication}{21.11.2022}{28.11.2022} \\
+        \ganttlinkedbar{Test Run}{28.11.2022}{30.11.2022} \\
+        \ganttlinkedbar{Evaluation of Test Results}{30.11.2022}{31.12.2022} \\
+        \ganttlinkedmilestone{Milestone 2}{31.12.2022} \\
+    \ganttgroup{Exosome Detection}{01.01.2023}{27.02.2023} \\
+        \ganttbar{Research}{01.01.2023}{27.02.2023} \\
+        \ganttmilestone{Milestone 3}{27.02.2023} \\
+    \ganttgroup{Documentation}{02.10.2022}{27.02.2023} \\
+        \ganttmilestone{Milestone 4}{27.02.2023}
+\end{ganttchart} 
+    \caption[Gantt chart]{The project time plan from october 2022 to february 2023}
+    \label{fig:projectTimePlan1} 
+   \end{figure} 
+ \end{landscape}
+\restoregeometry
+
+\newgeometry{left=15mm,bottom=20mm}
+ \begin{landscape}
+   \ganttset{calendar week text={W\myWeek{}}}
+   \begin{figure}
+ \begin{ganttchart}[hgrid, x unit=1.3mm, y unit chart=7.5mm, time slot format=little-endian]{01.03.2023}{31.08.2023}
+    \gantttitlecalendar{year, month = name, week = 40} \\
+    \ganttgroup{Buffer}{01.03.2023}{31.04.2023} \\
+\end{ganttchart} 
+    \caption[Gantt chart]{The project time plan.}
+    \label{fig:projectTimePlan2} 
+   \end{figure} 
+ \end{landscape}
+\restoregeometry
+
+
+
+\bibliographystyle{plain}
+\bibliography{lib/library}
+ 
+\end{document}
