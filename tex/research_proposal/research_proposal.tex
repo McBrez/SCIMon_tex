@@ -2,6 +2,7 @@
 \usepackage{pgfgantt}
 \usepackage{pdflscape}
 \usepackage{geometry}
+\usepackage{glossaries}
 \usepackage{cleveref}
 
 \newcounter{myWeekNum}
@@ -13,6 +14,9 @@
     \setcounter{myWeekNum}{1}
     \else\fi
 }
+
+\makeglossaries
+\input{tex/glossary.tex}
 
 \begin{document}
 
@@ -26,22 +30,27 @@
 }
  
 \section{Introduction}
-Conventional in-vitro cell monitoring is mainly done with 2D cultures (i.e. bio films). Such sensing setups for are quite simple and often comprise of not more than an glass substrate with deposited metal electrodes. Although easy to handle, such measurements are not representative, as 2D cultures cannot not depict the processes of in-vivo material. 
-% 2D cell culture measurements not representative to real biological processes. -> recent developments allows the efficient production of 3D Cell cultures -> much more like in-vivo cells.
-% Although a lot of development is going that way, solutions to continuously monitor organoid development are scarce. (why???) 
-% The product of this work shall be a platform that enables automatic monitoring -> This allows to gather more representative data concerning organoid development and pave the way to an large scale clinical application.
-
+Conventional in-vitro cell monitoring is mainly done on 2D cultures (i.e. bio films) \cite{Cho2020,Ranga2014}. Such sensing setups are quite simple and often comprise of nothing more than an semi-permeable membrane with deposited metal electrodes \cite{Hickman2016}. Although easy to handle, such measurements are not representative, as 2D cultures cannot depict the processes of in-vivo material. This circumstance can be traced back to missing cell-to-cell interactions. Recent studies show, that 3D cultures like spheroids or organoids resemble in-vivo cell behavior much more closely than their two-dimensional counterpart \cite{Ranga2014, Elliot2011}. Complementary to that, novel commercial products\cite{insphero, matrigel} allow the efficient and reliable growth of such cultures. Although a lot of research is focused on reactions of spheroid and organoids to medicinal compounds, there seems to be a lack of technical devices that facilitate the production of evidence \citep{Curto2018}. 
+In order to address this shortfall, this work shall produce a system that allows the automatic and continuous monitoring of spheroids via an \gls{is} measurement. Usage of this system shall dramatically decrease the effort of cytotoxicity assays and shall pave the way for large scale clinical applications. With the ultimate goal being the acceleration of cancer/drug research, therapy and diagnostics. 
 
 \section{State of the Art}
-\cite{Gong2021} does in-vitro impedance measurements via an electrode structue, but the organoid is not trapped. 
-\cite{Curto2018} does in-vitro impedance measurement via an OECT. 
+\label{sec:state_of_the_art}
+Curto et al. \cite{Curto2018} proposed a microfluidic system, that enables in-vitro \gls{is}. An \gls{oect} is facilitated as detector and amplifier for the measurement signal. The publication defines the spheroid resistance $R_{sph}$, which is expected to better describe the organoid than \gls{teer}. The organoid is held in place within an nozzle trap. This allows precise positioning and unloading/loading via an inversion of the medium flow direction. However, no continuous flow can be upheld, as this could cause the destruction of the organoid inside the nozzle trap. The authors suggest that this setup is eligible to distinguish between cell types an their viability. However, almost no effect has been reported on variations of spheroid size. 
 
+Gong et al. \cite{Gong2021} followed a simpler approach. The \gls{is} is conveyed through an field's metal electrode structure. The spheroid is not held in place. Rather it is pumped through a closed loop system and is analyzed, every time it passes the electrode array. This setup lends itself to high throughput applications, but is less suitable for configurations where single spheroids shall be monitored continuously.
+
+Honrad et al. \cite{Honrado2021} shows that \gls{is} is even feasible for analytes that comprise of a single cell. The presented microfluidics device includes multiple traps and bypass channels. This construction allows the simultaneous cytometry of multiple cells. 
 
 \section{Research Design}
-TODO
-\section{Time Plan}
+\label{sec:research_design}
+First, a pump control logic shall be designed and implemented, which allows the control of a microfluidics pump and an electrical impedance analyzer. This pump control logic shall allow the manual configuration (i.e. microfluidic flow rate, pressure, on and off time, impedance spectrum, etc.) of the components via an \gls{gui}. This \gls{gui} shall also be used to start an assay. The logic than monitors the microfluidic device and stores any generated data persistently.
 
-The major project tasks can be seen in the following list. A corresponding gantt chart is displayed in \Cref{fig:projectTimePlan1} and \Cref{fig:projectTimePlan2}. 
+The pump control logic shall be tested on existing microdfluidic devices. After successful implementation, a microfluidic chip shall be designed and fabricated, which allows the continuous monitoring of an spheroid/organoid via \gls{is}. Using the pump control logic and the microfluidic device, a well known cytometric assay shall be executed, in order to calibrate the measurement process. The generated data shall be analyzed and metrics shall be defined, which enable easy interpretation of the monitored proceedings. 
+
+\section{Time Plan}
+\label{sec:time_plan}
+
+The major project tasks can be seen in the following list. A corresponding gantt chart is displayed in \Cref{fig:projectTimePlan1}.
 \begin{enumerate}
 \item \textbf{Micro Pump Control:} A control for an micro fluidics pump shall be designed, implemented, tested and documented.
     \begin{enumerate}
@@ -55,19 +64,16 @@ The major project tasks can be seen in the following list. A corresponding gantt
     \begin{enumerate}
         \item \textbf{Research:} Research regarding organoid impedance measurement shall be done. 
         \item \textbf{Electrode Design:} The electrode for the impedance measurement shall be designed.
-        \item \textbf{Design of Measurement:} The impedance measurement principle shall be designed, modelled and simulated.
+        \item \textbf{Design of Measurement:} The impedance measurement principle shall be designed.
+        \item \textbf{Simulation of Measurement:} The electrode design shall be modeled, simulated and validated against the measurement design.
         \item \textbf{Fabrication:} The micro fluidics device shall be fabricated.
         \item \textbf{Test Run:} The impedance measurement shall be tested.
         \item \textbf{Test Evaluation:} The test results of the impedance measurement shall be evaluated.
         \item \textbf{Milestone 2:} The impedance measurement has successfully been applied to an organoid.
     \end{enumerate}
-\item \textbf{Exosome Detection:} The previously implemented impedance measurement shall be extended to also detect exosomes.
-    \begin{enumerate}
-        \item \textbf{Research:} Research regarding exosomes shall be done.
-    \end{enumerate}
 \item \textbf{Documentation:} The diploma thesis shall be written.
     \begin{enumerate}
-        \item \textbf{Milestone 4:} Diploma thesis has been written and submitted. End of project.
+        \item \textbf{Milestone 3:} Diploma thesis has been written and submitted. End of project.
     \end{enumerate}
 \end{enumerate}
  

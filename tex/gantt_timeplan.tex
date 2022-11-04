@@ -5,44 +5,29 @@
    \ganttset{calendar week text={W\myWeek{}}}
    \begin{figure}
  \begin{ganttchart}[hgrid, x unit=1.3mm, y unit chart=7.5mm, time slot format=little-endian
-]{01.10.2022}{28.2.2023}
+]{07.11.2022}{31.3.2023}
     \gantttitlecalendar{year, month = name, week = 40} \\
-    \ganttgroup{Micro Pump Control}{01.10.2022}{31.10.2022} \\
-        \ganttbar{Research}{01.10.2022}{07.10.2022} \\
-        \ganttlinkedbar{Design}{07.10.2022}{14.10.2022} \\
-        \ganttlinkedbar{Development}{14.10.2022}{21.10.2022} \\
-        \ganttlinkedbar{Testing}{21.10.2022}{28.10.2022} \\
-        \ganttlinkedmilestone{Milestone 1}{28.10.2022} \\
-    \ganttgroup{Impedance Measurement}{31.10.2022}{31.12.2022} \\
-        \ganttbar{Research}{31.10.2022}{7.11.2022} \\
-        \ganttbar{Electrode Design}{7.11.2022}{21.11.2022} \ganttlink{elem7}{elem8}\\
-        \ganttbar{Design of Measurement}{7.11.2022}{21.11.2022} \ganttlink{elem7}{elem9}\\
-        \ganttlinkedbar{Fabrication}{21.11.2022}{28.11.2022} \\
-        \ganttlinkedbar{Test Run}{28.11.2022}{30.11.2022} \\
-        \ganttlinkedbar{Evaluation of Test Results}{30.11.2022}{31.12.2022} \\
-        \ganttlinkedmilestone{Milestone 2}{31.12.2022} \\
-    \ganttgroup{Exosome Detection}{01.01.2023}{27.02.2023} \\
-        \ganttbar{Research}{01.01.2023}{27.02.2023} \\
-        \ganttmilestone{Milestone 3}{27.02.2023} \\
-    \ganttgroup{Documentation}{02.10.2022}{27.02.2023} \\
-        \ganttmilestone{Milestone 4}{27.02.2023}
+    \ganttgroup{Micro Pump Control}{07.11.2022}{5.12.2022} \\
+        \ganttbar{Research}{07.11.2022}{14.11.2022} \\
+        \ganttlinkedbar{Design}{14.11.2022}{21.11.2022} \\
+        \ganttlinkedbar{Development}{21.11.2022}{28.11.2022} \\
+        \ganttlinkedbar{Testing}{28.11.2022}{5.12.2022} \\
+        \ganttlinkedmilestone{Milestone 1}{5.12.2022} \\
+    \ganttgroup{Impedance Measurement}{5.12.2022}{30.1.2023} \\
+        \ganttbar{Research}{5.12.2022}{12.12.2022} \\
+        \ganttbar{Electrode Design}{12.12.2022}{9.1.2023} \ganttlink{elem7}{elem8}\\
+        \ganttbar{Design of Measurement}{12.12.2022}{9.1.2023} \ganttlink{elem7}{elem9}\\
+        \ganttbar{Simulation of Measurement}{12.12.2022}{9.1.2023} \ganttlink{elem7}{elem10}\\
+        \ganttlinkedbar{Fabrication}{9.1.2023}{16.1.2023} \\
+        \ganttlinkedbar{Test Run}{16.1.2023}{23.1.2023} \\
+        \ganttlinkedbar{Evaluation of Test Results}{23.1.2023}{30.1.2023} \\
+        \ganttlinkedmilestone{Milestone 2}{30.1.2023} \\
+    \ganttgroup{Documentation}{07.11.2022}{28.02.2023} \\
+        \ganttmilestone{Milestone 3}{28.02.2023} \\
+    \ganttgroup{Buffer}{28.02.2023}{31.03.2023} \\
 \end{ganttchart} 
-    \caption[Gantt chart]{The project time plan from october 2022 to february 2023}
+    \caption[Gantt chart]{The project time plan from November 2022 to March 2023}
     \label{fig:projectTimePlan1} 
-   \end{figure} 
- \end{landscape}
-\restoregeometry
-
-\newgeometry{left=15mm,bottom=20mm}
- \begin{landscape}
-   \ganttset{calendar week text={W\myWeek{}}}
-   \begin{figure}
- \begin{ganttchart}[hgrid, x unit=1.3mm, y unit chart=7.5mm, time slot format=little-endian]{01.03.2023}{31.08.2023}
-    \gantttitlecalendar{year, month = name, week = 40} \\
-    \ganttgroup{Buffer}{01.03.2023}{31.04.2023} \\
-\end{ganttchart} 
-    \caption[Gantt chart]{The project time plan.}
-    \label{fig:projectTimePlan2} 
    \end{figure} 
  \end{landscape}
 \restoregeometry
