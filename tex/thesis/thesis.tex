@@ -1,3 +1,37 @@
+\documentclass{report}
+% ------------------------------------------------------------------------------------- Packages --
+\usepackage{graphicx}
+\graphicspath{{fig/}} % Set search path for figures.
+\usepackage{cite}
+\usepackage{pgfgantt}
+\usepackage{pdflscape}
+\usepackage{geometry}
+\usepackage{glossaries}
+\usepackage{cleveref}
+
+\makeglossaries
+\input{tex/glossary.tex}
+
+\title{Development of an automated microfluidic system for spheroid-on-chip impedance monitoring.}
+\author{David Freismuth}
+
+% ----------------------------------------------------------------------------------- Document --
 \begin{document}
-ERROR 404: Thesis not found.
+
+\maketitle
+\tableofcontents
+
+\begin{abstract}
+A microfluidic setup comprising existing commercial microfluidic pumps, impedance analyzers, and customized chips will be realized for automated, continuous, real-time impedance based monitoring of cancer spheroids. This setup will reveal insights to in-vitro growth and proliferation of 3D cancer models. It will also allow to study the influence of conventional and novel anti-cancer drugs.
+\end{abstract}
+
+\input{tex/thesis/01_introduction}
+\input{tex/thesis/02_state_of_the_art}
+\input{tex/thesis/03_experimental_setup}
+\input{tex/thesis/04_results}
+\input{tex/thesis/05_conclusion}
+
+\bibliographystyle{plain}
+\bibliography{lib/library}
+
 \end{document}

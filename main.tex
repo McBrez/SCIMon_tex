@@ -1,19 +1,13 @@
-\documentclass{article}
-% ------------------------------------------------------------------------------------- Packages --
-% Load and configure some common packages here. 
-\usepackage{graphicx}
-\graphicspath{{fig/}} % Set search path for figures.
-
 % --------------------------------------------------------------------- Configuration Management --
 % The value of target_document defines which document shall be build. Following values are 
 % available:
 % 0 ... research proposal
 % 1 ... thesis
 \newcounter{target_document}
-\setcounter{target_document}{0}
+\setcounter{target_document}{1}
 \ifcase\value{target_document}
 	\input{tex/research_proposal/research_proposal.tex}
-\or 
+\or
 	\input{tex/thesis/thesis.tex}
 \else
 	\begin{document}
